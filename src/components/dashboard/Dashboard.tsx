@@ -30,8 +30,11 @@ export const Dashboard = () => {
   const [isPhoneRender, setIsPhoneRender] = useState(false);
   const [taskUpdates, setTaskUpdates] = useState<string[]>([]);
 
+  // Use environment variable or relative URL for API endpoint
+  const API_BASE_URL = import.meta.env.VITE_API_URL || window.location.origin;
+
   useEffect(() => {
-    const eventSource = new EventSource('http://localhost:8000/api/events');
+    const eventSource = new EventSource(`${API_BASE_URL}/api/events`);
 
     eventSource.onmessage = (event) => {
       setTaskUpdates((prev) => [...prev, event.data]);
@@ -57,7 +60,7 @@ export const Dashboard = () => {
     const body = agentName === 'Code Generator' ? { prompt } : { topic: prompt };
 
     try {
-      const response = await fetch(`http://localhost:8000${endpoint}`, {
+      const response = await fetch(`${API_BASE_URL}${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

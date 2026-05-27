@@ -38,9 +38,9 @@ export const Podcast = () => {
               </Card>
             </div>
 
-            {/* Podcast Info & Embed */}
+            {/* Podcast Info & Link */}
             <div className="space-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-foreground">
                   Real Stories. Hard Conversations.
                 </h3>
@@ -48,28 +48,16 @@ export const Podcast = () => {
                   Join Cameron De Vries as he dives deep into the unspoken truths that shape our communities. 
                   Each episode brings authentic voices, powerful stories, and the conversations we need to have.
                 </p>
+                <p className="text-muted-foreground">
+                  Listen to Unspoken Truths by Camo on Spotify for real stories and hard conversations that matter.
+                </p>
               </div>
 
-              {/* Spotify Embed */}
-              <Card className="overflow-hidden border-2">
-                <CardContent className="p-4">
-                  <iframe 
-                    style={{ borderRadius: "12px" }}
-                    src="https://open.spotify.com/embed/show/7cwfPZpCqL3L1T0gLsjkx0/video?utm_source=generator&t=0"
-                    width="100%"
-                    height="351"
-                    frameBorder="0"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                    title="Unspoken Truths Podcast on Spotify"
-                  />
-                </CardContent>
-              </Card>
-
-              <Button variant="energy" size="lg" className="w-full">
-                Listen on Spotify
-                <ExternalLink className="ml-2 h-5 w-5" />
+              <Button variant="energy" size="lg" className="w-full" asChild>
+                <a href="https://open.spotify.com/show/7cwfPZpCqL3L1T0gLsjkx0" target="_blank" rel="noopener noreferrer">
+                  Listen on Spotify
+                  <ExternalLink className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>

@@ -22,16 +22,17 @@ app.include_router(billing_router, prefix="/api/billing")
 
 app.middleware("http")(subscription_middleware)
 
-@app.get("/api/events")
-async def events(request: Request):
-    return StreamingResponse(sse_manager.subscribe(), media_type="text/event-stream")
+# Get allowed origins from environment variable, default to localhost for development
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://localhost:3000").split(",")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization", "X-User-Id"],
+    expose_headers=["X-Request-Id"],
+    max_age=600,
 )
 
 @app.get("/")
@@ -41,6 +42,10 @@ async def root():
 @app.get("/health")
 async def health():
     return {"status": "healthy"}
+
+@app.get("/api/events")
+async def events(request: Request):
+    return StreamingResponse(sse_manager.subscribe(), media_type="text/event-stream")
 
 @app.on_event("startup")
 async def startup_event():
