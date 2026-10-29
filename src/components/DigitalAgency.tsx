@@ -47,17 +47,6 @@ export const DigitalAgency = () => {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               The creative and digital powerhouse of Community & Unity
             </p>
-            <div className="pt-2">
-              <a 
-                href="https://ourcommunity.agency" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-lg font-semibold text-primary hover:text-primary/80 inline-flex items-center gap-2"
-              >
-                ourcommunity.agency
-                <ExternalLink className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Featured Projects */}
