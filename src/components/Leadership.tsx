@@ -1,11 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import cameronPortrait from "@/assets/cameron-devries.jpg";
 import { Users, UserCheck, Settings } from "lucide-react";
 const leaders = [{
   name: "Cameron De Vries",
   role: "Director",
-  percentage: "100%",
   icon: Users,
   image: cameronPortrait,
   description: "Leading the vision and strategic direction of Community & Unity, and host of Unspoken Truths podcast."
@@ -46,9 +44,6 @@ export const Leadership = () => {
                           <h3 className="text-xl font-bold text-foreground">
                             {leader.name}
                           </h3>
-                          <Badge variant="secondary" className="text-sm">
-                            {leader.percentage}
-                          </Badge>
                         </div>
                         <p className="text-lg font-semibold text-primary">
                           {leader.role}
