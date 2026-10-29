@@ -3,9 +3,6 @@ import { Button } from "@/components/ui/button";
 import logoBanner from "@/assets/logo-banner.png";
 import { Menu, X } from "lucide-react";
 const navItems = [{
-  label: "OCIU Dashboard",
-  href: "#dashboard"
-}, {
   label: "Mission",
   href: "#mission"
 }, {
@@ -17,18 +14,6 @@ const navItems = [{
 }, {
   label: "Services",
   href: "#services"
-}, {
-  label: "News",
-  href: "/community-news"
-}, {
-  label: "Jobs",
-  href: "/job-seeker"
-}, {
-  label: "AI Tutor",
-  href: "/ai-tutor"
-}, {
-  label: "Classroom",
-  href: "/community-classroom"
 }, {
   label: "Get Involved",
   href: "#join"
