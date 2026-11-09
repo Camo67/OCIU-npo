@@ -41,12 +41,14 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Button size="lg" variant="growth" className="min-w-[200px]">
-              Get Involved
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild size="lg" variant="growth" className="min-w-[200px]">
+              <a href="#join">
+                Get Involved
+                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+              </a>
             </Button>
-            <Button size="lg" variant="energy" className="min-w-[200px]">
-              Explore Our Work
+            <Button asChild size="lg" variant="energy" className="min-w-[200px]">
+              <a href="#mission">Explore Our Work</a>
             </Button>
           </div>
 
