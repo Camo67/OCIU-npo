@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { MissionVision } from "@/components/MissionVision";
 import { Leadership } from "@/components/Leadership";
 import { Podcast } from "@/components/Podcast";
+import { MusicProduction } from "@/components/MusicProduction";
 import { DigitalAgency } from "@/components/DigitalAgency";
 import { CallToAction } from "@/components/CallToAction";
 
@@ -19,6 +20,9 @@ const Index = () => {
         </div>
         <div id="leadership">
           <Leadership />
+        </div>
+        <div id="music-production">
+          <MusicProduction />
         </div>
         <div id="podcast">
           <Podcast />
